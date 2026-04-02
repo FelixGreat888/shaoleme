@@ -1,0 +1,30 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="paperGlow" x1="52" y1="44" x2="202" y2="212" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFCF92"/>
+      <stop offset="0.46" stop-color="#FF9A4D"/>
+      <stop offset="1" stop-color="#D84C21"/>
+    </linearGradient>
+    <linearGradient id="emberFill" x1="150" y1="42" x2="202" y2="118" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF5CF"/>
+      <stop offset="0.4" stop-color="#FFC36E"/>
+      <stop offset="1" stop-color="#FF5B2C"/>
+    </linearGradient>
+    <radialGradient id="smokeHalo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(128 128) rotate(90) scale(112)">
+      <stop stop-color="#FFB45F" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#FFB45F" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="128" cy="128" r="120" fill="#120F12"/>
+  <circle cx="128" cy="128" r="112" fill="url(#smokeHalo)"/>
+  <path d="M186 88L164 110L186 132" stroke="#FFD8AE" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70 148L92 126L70 104" stroke="#FFD8AE" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M89 48H157L191 81V177C191 193.569 177.569 207 161 207H89C72.4315 207 59 193.569 59 177V78C59 61.4315 72.4315 48 89 48Z" fill="url(#paperGlow)"/>
+  <path d="M157 48V73C157 82.9411 165.059 91 175 91H191" fill="#FFE7C3" fill-opacity="0.8"/>
+  <path d="M157 48V73C157 82.9411 165.059 91 175 91H191" stroke="#FFEFD7" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M95 158C111.601 172.738 136.801 172.738 153.402 158" stroke="#FFF7EA" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="106" cy="126" r="8" fill="#FFF7EA"/>
+  <circle cx="142" cy="126" r="8" fill="#FFF7EA"/>
+  <path d="M176.465 43.9188C181.95 48.5516 185.834 54.7975 187.552 61.7702C195.468 63.0944 202 69.9482 202 78.7646C202 88.0945 194.673 95.3321 185.581 95.7176C180.601 101.987 173.467 106 165.462 106C150.402 106 138.192 91.7919 138.192 74.2664C138.192 56.7409 150.402 42.5327 165.462 42.5327C169.364 42.5327 173.073 43.4861 176.465 43.9188Z" fill="url(#emberFill)"/>
+  <path d="M173.72 56.2078C169.604 59.9568 168.643 65.5769 170.541 69.8305C172.638 74.5317 177.854 77.9169 178.347 84.4208C178.633 88.1862 176.513 92.2968 171.326 95.8588C181.38 93.4194 188.308 85.5327 188.308 76.5733C188.308 67.2251 180.766 59.2241 171.326 56.8338C172.112 56.5514 172.91 56.3428 173.72 56.2078Z" fill="#FFF3D5" fill-opacity="0.92"/>
+</svg>
