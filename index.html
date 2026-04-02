@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>烧了么 | 清明限定赛博超度仪式</title>
+    <meta
+      name="description"
+      content="烧了么，给你死去的 API 额度、崩掉的上下文和没保存的 Session 办一场体面的赛博葬礼。清明限定，一键点火，功德+1。"
+    />
+    <link rel="icon" href="./assets/shaoleme-logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-product="claude-code">
+    <div class="scene scene-grid" aria-hidden="true"></div>
+    <div class="scene scene-glow" aria-hidden="true"></div>
+    <div class="scene scene-noise" aria-hidden="true"></div>
+
+    <!-- 音效控制开关 -->
+    <button id="audioToggle" class="audio-toggle" aria-label="开启/关闭音效" data-muted="true">
+      <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+      <svg class="icon-playing" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+      </svg>
+    </button>
+
+    <main id="appShell" class="app-shell" data-view="setup">
+      <header class="hero-panel">
+        <div class="brand-lockup">
+          <img class="brand-logo" src="./assets/shaoleme-logo.svg" alt="烧了么 logo" />
+          <div class="brand-copy-wrap">
+            <p class="eyebrow">清明限定赛博上香处</p>
+            <h1>烧了么</h1>
+          </div>
+        </div>
+        <p class="hero-copy">
+          今年清明不烧纸，烧 token。
+        </p>
+        <p class="hero-subcopy">给你死去的额度、崩掉的上下文、没保存的 session，办一场带点肉疼、带点好笑的赛博葬礼。</p>
+      </header>
+
+      <div class="layout">
+        <section id="controlPanel" class="panel control-panel" aria-labelledby="form-title">
+          <div class="panel-heading">
+            <p class="section-kicker">赛博灵堂登记处</p>
+            <h2 id="form-title">请如实交代，你这次又被哪个 AI 坑了多少沉没成本？</h2>
+          </div>
+
+          <form id="ritualForm" class="ritual-form">
+            <label class="field" for="tokenInput">
+              <span class="field-title">token 数量</span>
+              <span class="field-note" id="tokenNote">填入你逝去的 Token 数（支持大悲咒级海量额度）。</span>
+              <input
+                id="tokenInput"
+                name="tokenCount"
+                type="number"
+                inputmode="numeric"
+                min="1"
+                max="999999999"
+                step="1"
+                placeholder="例：824731（约等于一次跑飞的死循环）"
+                value="250000"
+                required
+              />
+            </label>
+
+            <label class="field" for="memorialInput">
+              <span class="field-title">逝者备注</span>
+              <span class="field-note">写下死因，让后人警醒（会印在电子墓碑上）。</span>
+              <input
+                id="memorialInput"
+                name="memorialName"
+                type="text"
+                maxlength="28"
+                placeholder="例：被 AI 幻觉骗走的三千行代码"
+                value="“那个就差一句 Prompt 就能改变世界的点子”"
+              />
+            </label>
+
+            <label class="field" for="nicknameInput">
+              <span class="field-title">主祭人 / 大冤种姓名</span>
+              <span class="field-note">非必填。方便发朋友圈时，朋友能精准嘲笑你的专属赛博坟头。</span>
+              <input
+                id="nicknameInput"
+                name="nickname"
+                type="text"
+                maxlength="12"
+                placeholder="例如：李小白"
+              />
+            </label>
+
+            <div class="field product-field">
+              <div class="field-header">
+                <div>
+                <span class="field-title">供奉神位 (选你的仇人)</span>
+                <span class="field-note">不同产品，烧法不同。</span>
+              </div>
+                <span class="product-hint" id="productHint">悬停或点击卡片，查看它的生前罪状。</span>
+              </div>
+              <div id="productGrid" class="product-grid" role="radiogroup" aria-label="选择产品"></div>
+              <input
+                id="customProductName"
+                class="custom-product-input"
+                type="text"
+                placeholder="请大声打出这个坑货的名字..."
+                maxlength="20"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-actions">
+              <button id="startButton" class="button button-primary" type="submit">点火！物理超度！</button>
+              <button id="randomButton" class="button button-secondary" type="button">AI 帮我编个惨案</button>
+            </div>
+          </form>
+        </section>
+
+        <section id="ritualPanel" class="panel ritual-panel" aria-labelledby="stage-title" hidden>
+          <div class="panel-heading">
+            <p class="section-kicker">云端往生室</p>
+            <h2 id="stage-title">愿天堂没有 Rate Limit，愿下辈子 Zero-shot 即是真理。</h2>
+          </div>
+
+          <div id="altarScreen" class="altar-screen" data-phase="idle" data-effect="ash">
+            <div class="altar-overlay" aria-hidden="true"></div>
+            <div class="smoke smoke-a" aria-hidden="true"></div>
+            <div class="smoke smoke-b" aria-hidden="true"></div>
+            <div class="smoke smoke-c" aria-hidden="true"></div>
+
+            <div class="stage-status">
+              <span class="progress-badge" id="progressBadge">时辰未到 (等风来)</span>
+              <h3 id="ritualHeadline">请先在左侧填写“算力死亡证明”。</h3>
+              <p id="ritualSubline">一旦点火，你的怨气将伴随显卡的轰鸣，化作量子飞灰直达云端。</p>
+            </div>
+
+            <div class="burn-core" id="burnCore" aria-live="polite">
+              <div class="core-aura" aria-hidden="true"></div>
+              <div class="effect-layer effect-ring" aria-hidden="true"></div>
+              <div class="effect-layer effect-pixels" aria-hidden="true"></div>
+              <div class="effect-layer effect-bars" aria-hidden="true"></div>
+              <div class="effect-layer effect-code" aria-hidden="true"></div>
+              <div class="effect-layer effect-windows" aria-hidden="true"></div>
+              <div class="effect-layer effect-shards" aria-hidden="true"></div>
+              <div id="offeringStream" class="offering-stream" aria-hidden="true"></div>
+              <div class="ritual-firepit" aria-hidden="true">
+                <div class="incense-rack">
+                  <span class="incense-stick incense-left"></span>
+                  <span class="incense-stick incense-center"></span>
+                  <span class="incense-stick incense-right"></span>
+                </div>
+                <div class="ember-basin">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="altar-plaque">
+                <span class="plaque-label">灵位</span>
+                <strong id="stageProductName">Claude Code</strong>
+                <span id="stageEffectLabel" class="plaque-meta">字符灰化 · 光标熄灭</span>
+                <span id="stageTokenCount" class="token-display">250,000</span>
+                <span class="token-unit">TOKENS</span>
+              </div>
+            </div>
+
+            <div class="particle-field" id="particleField" aria-hidden="true"></div>
+
+            <section class="ritual-meter" id="ritualMeter" aria-label="焚化进度">
+              <div class="meter-grid">
+                <article class="meter-card">
+                  <span class="meter-label">阳寿未尽 (剩余 Token)</span>
+                  <strong id="remainingCount" class="meter-value">250,000</strong>
+                </article>
+                <article class="meter-card">
+                  <span class="meter-label">已化飞灰 (烧毁 Token)</span>
+                  <strong id="offeredCount" class="meter-value">0</strong>
+                </article>
+                <article class="meter-card">
+                  <span class="meter-label">电子黄纸 (火化进度)</span>
+                  <strong id="bundleCount" class="meter-value">0 / 42 叠</strong>
+                </article>
+              </div>
+              <div class="ritual-progress">
+                <div id="ritualProgressFill" class="ritual-progress-fill"></div>
+              </div>
+              <p id="ritualMeterLine" class="ritual-meter-line">
+                系统正在猛火炖煮你的算力……烧太快显得不诚心，请静候它们化为赛博舍利子。
+              </p>
+            </section>
+
+            <div class="stage-footer">
+              <span id="memorialStrip" class="memorial-strip">逝者：“那个就差一句 Prompt 就能改变世界的点子”</span>
+              <p id="productWhisper" class="product-whisper">
+                “你以为它在进行深度思考，其实它在算计你的信用卡。”
+              </p>
+            </div>
+          </div>
+
+          <section id="resultWrapper" class="result-wrapper" aria-labelledby="posterTitle" hidden>
+            <div id="posterFrame" class="poster-card">
+              <div class="header-row">
+                <span>CYBER QINGMING</span>
+                <span id="posterProduct">Claude Code</span>
+              </div>
+
+              <div class="doc-title">【 算 力 阵 亡 通 知 书 】</div>
+
+              <h1 id="posterTitle" class="main-title">沉痛悼念被 Claude Code 无情吞噬的脑细胞与 Token</h1>
+
+              <div class="number-wrap">
+                <div id="posterNumber" class="number-value">250,000</div>
+                <div class="number-unit">TOKENS</div>
+              </div>
+
+              <div class="meta-section">
+                <div id="posterDate" class="meta-date">250,000 Token 已于清明化为量子泡沫，史称“API大出血事件”。</div>
+
+                <div class="meta-row">
+                  <span class="meta-label">逝者</span>
+                  <span id="posterMemorialName" class="meta-value">那个就差一句 Prompt 就能改变世界的需求</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">大冤种</span>
+                  <span id="posterNickname" class="meta-value">匿名香客</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">肇事模型</span>
+                  <span id="posterMetaModel" class="meta-value meta-value-accent">Claude Code</span>
+                </div>
+              </div>
+
+              <div class="epitaph-section">
+                <h2 id="posterEpitaph" class="epitaph-text">它曾无限接近完美，直到你的余额走到了尽头。</h2>
+                <p id="posterSubquote" class="epitaph-sub">需求没落地，额度先落地了。</p>
+              </div>
+
+              <div class="settlement-section">
+                <div class="meta-row meta-row-plain">
+                  <span class="meta-label">本次超度耗时</span>
+                  <span id="posterDuration" class="meta-value">114 秒 (慢火细熬)</span>
+                </div>
+                <div class="meta-row meta-row-plain meta-row-tight">
+                  <span class="meta-label">积攒赛博功德</span>
+                  <span id="posterMerit" class="meta-value">+42</span>
+                </div>
+              </div>
+
+              <div class="footer-row">
+                <div class="footer-text">
+                  <strong>烧了么</strong>
+                  <span>今年清明不烧纸，烧 token</span>
+                </div>
+                <div class="footer-cta">
+                  <span>扫码或搜索进入 烧了么</span>
+                  <div class="qr-box"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="result-actions">
+              <button id="rerollButton" class="button button-primary" type="button">怨气未散，再烧一炉</button>
+              <button id="saveButton" class="button button-secondary" type="button">保存赛博电子碑 (发朋友圈)</button>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

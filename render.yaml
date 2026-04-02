@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: shaoleme-qingming
+    runtime: static
+    buildCommand: 'echo "static site - no build step"'
+    staticPublishPath: ./
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
