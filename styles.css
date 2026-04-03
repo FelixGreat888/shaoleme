@@ -489,6 +489,10 @@ input::placeholder {
   gap: 12px;
 }
 
+.result-actions .button[data-saving="true"] {
+  opacity: 0.82;
+}
+
 .button {
   appearance: none;
   border: 0;
@@ -1185,6 +1189,8 @@ input::placeholder {
 
 .result-wrapper {
   margin-top: 22px;
+  display: grid;
+  gap: 18px;
   opacity: 0;
   transform: translateY(22px);
   pointer-events: none;
@@ -1445,6 +1451,7 @@ input::placeholder {
 .qr-box {
   width: 86px;
   height: 86px;
+  overflow: hidden;
   border-radius: 18px;
   border: 1px dashed rgba(255, 255, 255, 0.18);
   background:
@@ -1453,6 +1460,100 @@ input::placeholder {
     rgba(255, 255, 255, 0.015);
   background-size: 12px 12px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.donation-box {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 48%),
+    rgba(9, 9, 9, 0.8);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 16px 34px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.result-wrapper .donation-box {
+  margin-top: 0;
+}
+
+.donation-content {
+  display: grid;
+  gap: 10px;
+}
+
+.donation-title {
+  margin: 0;
+  font-family: "Songti SC", "STSong", "Times New Roman", serif;
+  font-size: 1.2rem;
+  color: var(--accent-2);
+}
+
+.donation-desc {
+  margin: 0;
+  max-width: 44em;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.78;
+}
+
+.donation-qr-wrap {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  padding: 14px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 72%),
+    rgba(255, 255, 255, 0.02);
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.donation-qr-wrap:hover,
+.donation-qr-wrap:focus-visible {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 44%, rgba(255, 255, 255, 0.08));
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.24),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  outline: none;
+}
+
+.donation-qr-img {
+  width: 128px;
+  height: 128px;
+  display: block;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.donation-qr-wrap:hover .donation-qr-img,
+.donation-qr-wrap:focus-visible .donation-qr-img {
+  transform: scale(1.08);
+  box-shadow: 0 22px 34px rgba(0, 0, 0, 0.22);
+}
+
+.donation-hint {
+  color: var(--soft);
+  font-size: 0.78rem;
+  text-align: center;
+  line-height: 1.5;
 }
 
 @keyframes corePulse {
@@ -1850,6 +1951,14 @@ input::placeholder {
   .footer-cta {
     justify-items: start;
     text-align: left;
+  }
+
+  .donation-box {
+    grid-template-columns: 1fr;
+  }
+
+  .donation-qr-wrap {
+    justify-self: start;
   }
 
   .button {

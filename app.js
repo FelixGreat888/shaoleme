@@ -29,32 +29,32 @@ const products = [
     ],
   },
   {
-    id: "chatgpt",
-    name: "ChatGPT",
-    subtitle: "嘴上说重新生成，账单已经先刷新了。",
-    icon: "./assets/chatgpt.svg",
+    id: "minimax",
+    name: "MiniMax",
+    subtitle: "生成得像开闸放水，结算时也像。",
+    icon: "./assets/minimax-official.png",
     effect: "pulse",
-    effectLabel: "Network Error · 重新生成",
+    effectLabel: "高能快返 · 余额快闪",
     theme: {
-      bg1: "#08110e",
-      bg2: "#0f1f19",
-      bg3: "#132f28",
-      accent: "#36d29e",
-      accent2: "#c7ffe4",
-      text: "#e8faf4",
-      muted: "rgba(232, 250, 244, 0.72)",
-      soft: "rgba(232, 250, 244, 0.44)",
-      line: "rgba(232, 250, 244, 0.14)",
-      ember: "rgba(54, 210, 158, 0.42)",
-      glow: "rgba(140, 255, 222, 0.2)",
+      bg1: "#120d12",
+      bg2: "#251116",
+      bg3: "#412124",
+      accent: "#ff7458",
+      accent2: "#ffe0d5",
+      text: "#fff2ee",
+      muted: "rgba(255, 242, 238, 0.72)",
+      soft: "rgba(255, 242, 238, 0.44)",
+      line: "rgba(255, 242, 238, 0.14)",
+      ember: "rgba(255, 116, 88, 0.42)",
+      glow: "rgba(255, 190, 171, 0.22)",
     },
     titles: [
-      "谨以此图，祭奠被 ChatGPT 温柔带走的 token",
-      "一次对话，几度心碎",
+      "沉痛悼念被 MiniMax 一键带走的海量算力",
+      "它响应很快，你的余额碎得更快",
     ],
     epitaphs: [
-      "它总能先理解你的语气，再理解你的额度。",
-      "你们聊了很多，留下来的只有消费记录。",
+      "它跑得越丝滑，你越容易忘记余额也在跟着一起滑走。",
+      "演示里像未来已来，账单里像未来预支。",
     ],
   },
   {
@@ -116,32 +116,32 @@ const products = [
     ],
   },
   {
-    id: "cline",
-    name: "Cline",
-    subtitle: "任务可以无限重试，余额不会自动回血。",
-    icon: "./assets/cline.png",
+    id: "gemini",
+    name: "Gemini",
+    subtitle: "会多模态，也会多线程消耗你的耐心。",
+    icon: "./assets/gemini-official.svg",
     effect: "smoke",
-    effectLabel: "死循环重试 · 余额清零",
+    effectLabel: "双核闪念 · 灵感失联",
     theme: {
-      bg1: "#0a090d",
-      bg2: "#15101c",
-      bg3: "#291128",
-      accent: "#ff72c7",
-      accent2: "#ffe2f5",
-      text: "#fff2fb",
-      muted: "rgba(255, 242, 251, 0.72)",
-      soft: "rgba(255, 242, 251, 0.44)",
-      line: "rgba(255, 242, 251, 0.14)",
-      ember: "rgba(255, 114, 199, 0.42)",
-      glow: "rgba(255, 179, 228, 0.22)",
+      bg1: "#08101d",
+      bg2: "#111a30",
+      bg3: "#1d1745",
+      accent: "#6f93ff",
+      accent2: "#e5e9ff",
+      text: "#f3f5ff",
+      muted: "rgba(243, 245, 255, 0.72)",
+      soft: "rgba(243, 245, 255, 0.44)",
+      line: "rgba(243, 245, 255, 0.14)",
+      ember: "rgba(111, 147, 255, 0.42)",
+      glow: "rgba(181, 197, 255, 0.22)",
     },
     titles: [
-      "祭奠那次由 Cline 全程参与的高强度燃烧",
-      "任务完成与否另说，token 确实完成了",
+      "悼念那笔被 Gemini 温柔卷走的上下文",
+      "多模态还没起飞，额度先被托运了",
     ],
     epitaphs: [
-      "代理替你跑了很多步，账单也替你迈了一大步。",
-      "它没有停下，你的钱包也没来得及停下。",
+      "它看上去像在理解一切，实际上先理解了你的额度上限。",
+      "问得越立体，扣得越具体。",
     ],
   },
   {
@@ -174,32 +174,32 @@ const products = [
     ],
   },
   {
-    id: "github-copilot",
-    name: "GitHub Copilot",
-    subtitle: "补得越像人写的，越容易在最后一行翻车。",
-    icon: "./assets/github-copilot.png",
+    id: "kimi",
+    name: "Kimi",
+    subtitle: "上下文越拉越长，心碎战线也一起拉长。",
+    icon: "./assets/kimi.png",
     effect: "stack",
-    effectLabel: "大段注释补全 · 语法错误",
+    effectLabel: "超长上下文 · 记到最后心碎",
     theme: {
-      bg1: "#0c0d08",
-      bg2: "#191d10",
-      bg3: "#1e1233",
-      accent: "#9f8cff",
-      accent2: "#e3deff",
-      text: "#f5f2ff",
-      muted: "rgba(245, 242, 255, 0.72)",
-      soft: "rgba(245, 242, 255, 0.44)",
-      line: "rgba(245, 242, 255, 0.14)",
-      ember: "rgba(159, 140, 255, 0.42)",
-      glow: "rgba(203, 194, 255, 0.22)",
+      bg1: "#090909",
+      bg2: "#151517",
+      bg3: "#1b2234",
+      accent: "#6ca7ff",
+      accent2: "#e8f1ff",
+      text: "#f4f7ff",
+      muted: "rgba(244, 247, 255, 0.72)",
+      soft: "rgba(244, 247, 255, 0.44)",
+      line: "rgba(244, 247, 255, 0.14)",
+      ember: "rgba(108, 167, 255, 0.42)",
+      glow: "rgba(184, 214, 255, 0.22)",
     },
     titles: [
-      "沉痛悼念被 GitHub Copilot 顺手带走的 token",
-      "补全了大段注释，也补全了新的语法错误",
+      "沉痛悼念被 Kimi 超长记忆慢慢嚼碎的 token",
+      "它记住了前文后文，唯独没记住要替你省钱",
     ],
     epitaphs: [
-      "它补得飞快，直到编译器提醒你这根本不是人能跑通的东西。",
-      "看起来像队友写的，出事时也像队友一样立刻消失。",
+      "上下文拉得够长，心碎的战线也跟着被无限拉长。",
+      "它像在认真陪你熬夜，只是顺手把预算也陪没了。",
     ],
   },
   {
@@ -266,23 +266,37 @@ const AUDIO_SOURCE_CANDIDATES = {
   bgm: ["./background.mp3", "./assets/background.mp3"],
   fire: ["./fire-start.mp3", "./assets/fire-start.mp3"],
 };
+const POSTER_QR_SOURCE = "./assets/shaoleme-qr.png";
+const DONATION_QR_SOURCE = "./assets/wechat-pay.jpg";
 const bgm = new Audio(AUDIO_SOURCE_CANDIDATES.bgm[0]);
 bgm.loop = true;
 bgm.volume = 0.5;
 bgm.preload = "auto";
-bgm.muted = true;
+bgm.muted = false;
 const fireSfx = new Audio(AUDIO_SOURCE_CANDIDATES.fire[0]);
 fireSfx.volume = 0.88;
 fireSfx.preload = "auto";
-fireSfx.muted = true;
+fireSfx.muted = false;
+const posterQrImage = new Image();
+const posterQrReady = new Promise((resolve) => {
+  posterQrImage.addEventListener("load", () => resolve(posterQrImage), { once: true });
+  posterQrImage.addEventListener("error", () => resolve(null), { once: true });
+});
+posterQrImage.src = POSTER_QR_SOURCE;
+const donationQrImage = new Image();
+const donationQrReady = new Promise((resolve) => {
+  donationQrImage.addEventListener("load", () => resolve(donationQrImage), { once: true });
+  donationQrImage.addEventListener("error", () => resolve(null), { once: true });
+});
+donationQrImage.src = DONATION_QR_SOURCE;
 const PRODUCT_HINTS = {
   "claude-code": "死因：额度耗尽 · 请等至下午3点",
-  chatgpt: "死因：Network Error · 重新生成",
+  minimax: "死因：高能快返 · 余额同步蒸发",
   deepseek: "死因：服务器繁忙 · 思考意外中断",
   cursor: "死因：Premium 请求用尽 · 代码回滚",
-  cline: "死因：死循环重试 · API 余额清零",
+  gemini: "死因：多模态排队 · 灵感半路失联",
   codex: "死因：正在写这页代码 · 突然失忆",
-  "github-copilot": "死因：大段注释补全 · 语法错误",
+  kimi: "死因：超长上下文 · 记到最后只剩心碎",
   other: "死因：提桶跑路 · 域名已失效",
 };
 const posterConfig = {
@@ -291,10 +305,10 @@ const posterConfig = {
     epitaph: "它曾无限接近完美，直到你的余额走到了尽头。",
     subquote: "需求没落地，额度先落地了。",
   },
-  chatgpt: {
-    name: "ChatGPT",
-    epitaph: "在它输出最后半个括号前，网络永远断开了连接。",
-    subquote: "聊得很共情，代码跑不通。",
+  minimax: {
+    name: "MiniMax",
+    epitaph: "它反应快到像读心术，扣费也快到像抢劫。",
+    subquote: "输出像开挂，余额像开闸。",
   },
   deepseek: {
     name: "DeepSeek",
@@ -306,20 +320,20 @@ const posterConfig = {
     epitaph: "一顿 Cmd+K 猛如虎，一看请求剩十五。",
     subquote: "补全很智能，账单很伤人。",
   },
-  cline: {
-    name: "Cline",
-    epitaph: "它像个尽职的黑洞，不知疲倦地吞噬着你的 API Key。",
-    subquote: "代理自动跑一宿，一看早晨零产出。",
+  gemini: {
+    name: "Gemini",
+    epitaph: "它的答案常常很大，你的上下文窗口常常更大地死去。",
+    subquote: "看完演示很心动，看到账单更心碎。",
   },
   codex: {
     name: "Codex",
     epitaph: "写了一半突然失忆，只留给后人满屏的 //TODO。",
     subquote: "正在重构这页代码，突然忘了自己在干嘛。",
   },
-  copilot: {
-    name: "GitHub Copilot",
-    epitaph: "生前最爱补全废话注释，死后一行逻辑没留。",
-    subquote: "懂我的缩进，不懂我的心。",
+  kimi: {
+    name: "Kimi",
+    epitaph: "它记住了你说过的每一句，却没放过你账户里的每一分。",
+    subquote: "上下文很长，快乐很短。",
   },
   other: {
     name: "野生套壳 API",
@@ -329,12 +343,12 @@ const posterConfig = {
 };
 const posterConfigKeysByProductId = {
   "claude-code": "claude",
-  chatgpt: "chatgpt",
+  minimax: "minimax",
   deepseek: "deepseek",
   cursor: "cursor",
-  cline: "cline",
+  gemini: "gemini",
   codex: "codex",
-  "github-copilot": "copilot",
+  kimi: "kimi",
   other: "other",
 };
 
@@ -344,7 +358,7 @@ const state = {
   currentResult: null,
   tokenNoteTimer: null,
   productHintTimer: null,
-  audioMuted: true,
+  audioMuted: false,
   ritualToken: 0,
   burnFrameId: 0,
   burnBurstTimer: 0,
@@ -410,6 +424,8 @@ syncAudioToggle();
 applyProductTheme(getSelectedProduct());
 renderIdleStage();
 setView("setup");
+showSelectedOrDefaultProductHint();
+bootBackgroundAudio();
 
 function bindEvents() {
   elements.form.addEventListener("submit", handleStart);
@@ -451,6 +467,25 @@ function syncAudioToggle() {
   const muted = state.audioMuted;
   elements.audioToggle.dataset.muted = muted ? "true" : "false";
   elements.audioToggle.setAttribute("aria-label", muted ? "开启音效" : "关闭音效");
+}
+
+function primeAudioAutoplayUnlock() {
+  const resumeAudio = async () => {
+    await ensureAudioPlayback({ playBgm: true, playFire: false });
+  };
+  ["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
+    window.addEventListener(eventName, resumeAudio, { once: true, passive: true });
+  });
+}
+
+async function bootBackgroundAudio() {
+  if (state.audioMuted) {
+    return;
+  }
+  const started = await safePlayAudio(bgm);
+  if (!started) {
+    primeAudioAutoplayUnlock();
+  }
 }
 
 function setAudioMuted(muted, options = {}) {
@@ -1035,20 +1070,47 @@ function renderPoster(result) {
   elements.posterMerit.textContent = result.meritText;
 }
 
-function handleSavePoster() {
+async function handleSavePoster() {
+  const button = elements.saveButton;
+  if (button.dataset.saving === "true") {
+    return;
+  }
+
+  const restoreLabel = button.textContent;
+  button.dataset.saving = "true";
+  button.disabled = true;
+  button.textContent = "正在生成海报...";
+  await wait(16);
+
   const result = state.currentResult || buildPosterPayload(getFormData());
   const posterData = { ...result };
-  const canvas = drawPosterCanvas(posterData);
-  const link = document.createElement("a");
-  link.href = canvas.toDataURL("image/png");
-  link.download = `烧了么-${sanitizeFilename(posterData.product.name)}-${posterData.tokenCount}.png`;
-  link.click();
+  try {
+    const canvas = await drawPosterCanvas(posterData);
+    const filename = `烧了么-${sanitizeFilename(posterData.product.name)}-${posterData.tokenCount}.png`;
+    try {
+      downloadPosterDataUrl(canvas.toDataURL("image/png"), filename);
+    } catch (dataUrlError) {
+      console.warn("Data URL export failed, falling back to blob export", dataUrlError);
+      const blob = await canvasToBlob(canvas);
+      downloadPosterBlob(blob, filename);
+    }
+    button.textContent = "已保存海报";
+  } catch (error) {
+    console.error("Failed to save poster", error);
+    button.textContent = "保存失败，点我重试";
+  } finally {
+    window.setTimeout(() => {
+      button.dataset.saving = "false";
+      button.disabled = false;
+      button.textContent = restoreLabel;
+    }, 1200);
+  }
 }
 
-function drawPosterCanvas(result) {
+async function drawPosterCanvas(result) {
   const scale = 2;
   const width = 720;
-  const height = 1120;
+  const height = 1400;
   const canvas = document.createElement("canvas");
   canvas.width = width * scale;
   canvas.height = height * scale;
@@ -1154,19 +1216,92 @@ function drawPosterCanvas(result) {
   ctx.fillStyle = hexToRgba(theme.text, 0.68);
   ctx.font = '400 16px "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
   ctx.fillText("今年清明不烧纸，烧 token", 108, footerTop + 78);
-  ctx.fillText("扫码或搜索进入 烧了么", width - 272, footerTop + 38);
-  drawRoundedRect(ctx, width - 188, footerTop + 50, 80, 80, 18, "rgba(255,255,255,0.015)", hexToRgba(theme.accent2, 0.22));
-  ctx.strokeStyle = hexToRgba(theme.accent2, 0.18);
-  ctx.setLineDash([4, 4]);
-  ctx.strokeRect(width - 178, footerTop + 60, 60, 60);
-  ctx.setLineDash([]);
-  ctx.fillStyle = hexToRgba(theme.accent2, 0.5);
-  ctx.font = '600 11px "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
-  ctx.textAlign = "center";
-  ctx.fillText("QR", width - 148, footerTop + 96);
-  ctx.textAlign = "left";
+  ctx.fillText("扫码进入 烧了么", width - 252, footerTop + 38);
+  drawRoundedRect(ctx, width - 188, footerTop + 50, 80, 80, 18, "rgba(255,255,255,0.03)", hexToRgba(theme.accent2, 0.18));
+  const qrImage = posterQrImage.complete
+    ? (posterQrImage.naturalWidth > 0 ? posterQrImage : null)
+    : await posterQrReady;
+  if (qrImage) {
+    drawRoundedImage(ctx, qrImage, width - 180, footerTop + 58, 64, 64, 14);
+  } else {
+    ctx.strokeStyle = hexToRgba(theme.accent2, 0.18);
+    ctx.setLineDash([4, 4]);
+    ctx.strokeRect(width - 178, footerTop + 60, 60, 60);
+    ctx.setLineDash([]);
+    ctx.fillStyle = hexToRgba(theme.accent2, 0.5);
+    ctx.font = '600 11px "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+    ctx.textAlign = "center";
+    ctx.fillText("QR", width - 148, footerTop + 96);
+    ctx.textAlign = "left";
+  }
 
   return canvas;
+}
+
+function canvasToBlob(canvas) {
+  return new Promise((resolve, reject) => {
+    if (!canvas.toBlob) {
+      try {
+        const dataUrl = canvas.toDataURL("image/png");
+        const blob = dataUrlToBlob(dataUrl);
+        resolve(blob);
+      } catch (error) {
+        reject(error);
+      }
+      return;
+    }
+
+    canvas.toBlob((blob) => {
+      if (blob) {
+        resolve(blob);
+        return;
+      }
+
+      try {
+        resolve(dataUrlToBlob(canvas.toDataURL("image/png")));
+      } catch (error) {
+        reject(error);
+      }
+    }, "image/png");
+  });
+}
+
+function dataUrlToBlob(dataUrl) {
+  const [header, data] = dataUrl.split(",");
+  const match = header.match(/data:(.*?);base64/);
+  const mimeType = match ? match[1] : "image/png";
+  const binary = window.atob(data);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+  return new Blob([bytes], { type: mimeType });
+}
+
+function downloadPosterDataUrl(dataUrl, filename) {
+  const link = document.createElement("a");
+  link.href = dataUrl;
+  link.download = filename;
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  window.setTimeout(() => {
+    link.remove();
+  }, 1000);
+}
+
+function downloadPosterBlob(blob, filename) {
+  const objectUrl = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = objectUrl;
+  link.download = filename;
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  window.setTimeout(() => {
+    URL.revokeObjectURL(objectUrl);
+    link.remove();
+  }, 1000);
 }
 
 function applyProductTheme(product) {
@@ -1368,6 +1503,24 @@ function drawRoundedRect(ctx, x, y, width, height, radius, fill, stroke) {
   ctx.fill();
   ctx.strokeStyle = stroke;
   ctx.stroke();
+}
+
+function drawRoundedImage(ctx, image, x, y, width, height, radius) {
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(x + radius, y);
+  ctx.lineTo(x + width - radius, y);
+  ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+  ctx.lineTo(x + width, y + height - radius);
+  ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+  ctx.lineTo(x + radius, y + height);
+  ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+  ctx.lineTo(x, y + radius);
+  ctx.quadraticCurveTo(x, y, x + radius, y);
+  ctx.closePath();
+  ctx.clip();
+  ctx.drawImage(image, x, y, width, height);
+  ctx.restore();
 }
 
 function hexToRgba(hex, alpha) {
